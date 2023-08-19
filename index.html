@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Library</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <header>
+      <h1>Library Notes</h1>
+    </header>
+    
+    <main>
+      <button id="new-book-btn">+ New book</button>
+
+    <div id="book-list"></div>
+
+    <form id="new-book-form" class="hidden new-book-form">
+      <h2>Add new book</h2>
+      <input class="input" type="text" id="title" placeholder="Title" required>
+      <input class="input" type="text" id="author" placeholder="Author" required>
+      <input class="input" type="number" id="pages" placeholder="Pages" required><br>
+      <fieldset>
+        <legend>Status:</legend>
+        <label>
+          <input type="radio" name="status" value="not-read" checked>Not-read</label>
+        <label>
+          <input type="radio" name="status" value="read" checked>Read</label>
+      </fieldset><br> 
+      <button type="submit" id="status">Submit</button>
+    </form>
+    </main>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>

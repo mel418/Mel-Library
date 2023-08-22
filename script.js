@@ -1,11 +1,17 @@
-const myLibrary = [];
-
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+  
+  changeStatus() {
+    this.status = this.status === 'read' ? 'not-read' : 'read';
+  }
 }
+
+const myLibrary = [];
 
 function addBookToLibrary(title, author, pages, status) {
   const newBook = new Book(title, author, pages, status);
@@ -16,11 +22,7 @@ function removeBook(index) {
   myLibrary.splice(index, 1);
 }
 
-function changeStatus(index) {
-  const currentStatus = myLibrary[index].status;
-  const newStatus = currentStatus === 'read' ? 'not-read': 'read';
-  myLibrary[index].status = newStatus;
-}
+
 
 function displayBooks() {
   const bookList = document.getElementById('book-list');
@@ -53,7 +55,8 @@ function displayBooks() {
     statusButton.textContent = 'Status change';
     statusButton.classList.add('status-button');
     statusButton.addEventListener('click', function () {
-      changeStatus(index);
+      console.log('hi');
+      book.changeStatus();
       displayBooks();
     });
 
